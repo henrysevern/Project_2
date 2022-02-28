@@ -15,11 +15,12 @@ body {
     align-items: center;
     background-color: blue;
 }
+
 /* Change colours to less solid colors */
 :root {
     --hue-neutral: 200;
     --hue-correct: 100;
-    --hue-wrong: 0;
+    --hue-incorrect: 0;
 }
 
 .container {
@@ -52,9 +53,26 @@ body {
 }
 
 .btn.correct {
-
+    --hue: var(--hue-correct);
+    color: black;
 }
 
-.btn.correct {
-    
+.btn.incorrect {
+    --hue: var(--hue-incorrect)
+}
+
+.start-btn, .next-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
 }
