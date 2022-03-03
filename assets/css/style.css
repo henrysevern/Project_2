@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+
 *,
 *::before,
 *::after {
     box-sizing: border-box;
-    /* add font here */
+    font-family: 'Nova Square', cursive;
 }
 
 body {
@@ -18,7 +20,17 @@ body {
 
 }
 
-/* Change colours to less solid colors */
+#title {
+    position: fixed;
+    top: 0;
+    color: whitesmoke;
+}
+
+.opening-message {
+    position: fixed;
+    top: 175px;
+    color: whitesmoke;
+}
 :root {
     --hue-neutral: 200;
     --hue-correct: 100;
@@ -79,12 +91,3 @@ body {
     display: none;
 }
 
-#score {
-    color: green;
-    font-weight: bold;
-}
-
-#incorrect {
-    color: red;
-    font-weight: bold;
-}
