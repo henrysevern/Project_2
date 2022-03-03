@@ -4,9 +4,12 @@ const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 const openMessage = document.getElementById('open')
+const progressBarFull = document.getElementById('progressBarFull')
 
 let shuffleQuestions, currentQuestionIndex
+let score = 0
 
+const maxQuestions = 10
 
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
@@ -27,6 +30,8 @@ function setNextQuestion() {
     resetState()
     showQuestion(shuffleQuestions[currentQuestionIndex])
 
+    currentQuestionIndex++
+    progressBarFull.style.width = `${(currentQuestionIndex/maxQuestions) * 100}%`
 }
 
 function showQuestion(question) {
@@ -65,16 +70,25 @@ function selectAnswer(e) {
     }
 }
 
+// Function sets classes on correct and incorrect answers and call 'incrementScore' function if answer is correct.
 function setStatusClass(element, correct) {
     clearStatusClass(element)
     if (correct) {
         element.classList.add('correct')
+        incrementScore()
     } else
         element.classList.add('incorrect')
 }
 
+// Function removes correct and incorrect classes after answer has been selected for next question.
 function clearStatusClass(element) {
     element.classList.remove('correct')
     element.classList.remove('incorrect')
 
+}
+
+// Function to increment score
+function incrementScore() {
+    let oldScore = parseInt(document.getElementById("score").innerText);
+    document.getElementById("score").innerText = ++oldScore;
 }
