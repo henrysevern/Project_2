@@ -120,6 +120,90 @@ const questions = [{
     ]
 },
 
+{
+question: "How many scoring zones are there on a conventional dart board?",
+answers: [{
+        text: "82",
+        correct: true
+    },
+    {
+        text: "62",
+        correct: false
+    },
+    {
+        text: "102",
+        correct: false
+    },
+    {
+        text: "42",
+        correct: false
+    },
+]
+},
+
+{
+    question: "In a game of snooker, what colour ball is worth 3 points?",
+    answers: [{
+            text: "Yellow",
+            correct: false
+        },
+        {
+            text: "Brown",
+            correct: false
+        },
+        {
+            text: "Green",
+            correct: true
+        },
+        {
+            text: "Blue",
+            correct: false
+        },
+    ]
+    },
+
+    {
+        question: "Which nation hosted the FIFA World Cup in 2006?",
+        answers: [{
+                text: "United Kingdom",
+                correct: false
+            },
+            {
+                text: "Brazil",
+                correct: false
+            },
+            {
+                text: "South Africa",
+                correct: false
+            },
+            {
+                text: "Germany",
+                correct: true
+            },
+        ]
+        },
+
+        {
+            question: "The F1 season of 1994 is remembered for what tragic event?",
+            answers: [{
+                    text: "The Showdown (Australia)",
+                    correct: false
+                },
+                {
+                    text: "Death of Ayrton Senna (San Marino)",
+                    correct: true
+                },
+                {
+                    text: "Verstappen on Fire (Germany)",
+                    correct: false
+                },
+                {
+                    text: `Schumacher's Ban (Britain)`,
+                    correct: false
+                },
+            ]
+            },   
+
 
 
 ]
