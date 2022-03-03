@@ -13,7 +13,9 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: blue;
+    background: url('../images/weightlifting.jpg') no-repeat center center;
+    background-size: cover;
+
 }
 
 /* Change colours to less solid colors */
@@ -75,4 +77,14 @@ body {
 
 .hide {
     display: none;
+}
+
+#score {
+    color: green;
+    font-weight: bold;
+}
+
+#incorrect {
+    color: red;
+    font-weight: bold;
 }
