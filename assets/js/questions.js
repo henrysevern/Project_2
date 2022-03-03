@@ -1,16 +1,16 @@
 const questions = [{
     question: "At which bridge does the annual Oxford and Cambridge boat race start?",
     answers: [{
-            text: "Putney",
-            correct: true
-        },
-        {
             text: "Hammersmith",
             correct: false
         },
         {
             text: "Vauxhall ",
             correct: false
+        },
+        {
+            text: "Putney",
+            correct: true
         },
         {
             text: "Battersea",
@@ -42,10 +42,6 @@ const questions = [{
 {
     question: "What cricketing term denotes a batsman being dismissed with a score of zero?",
     answers: [{
-            text: "Duck",
-            correct: true
-        },
-        {
             text: "Bye",
             correct: false
         },
@@ -57,17 +53,21 @@ const questions = [{
             text: "Carry",
             correct: false
         },
+        {
+            text: "Duck",
+            correct: true
+        },
     ]
 },
 {
     question: "Who was the British professional wrestler Shirley Crabtree better known as?",
     answers: [{
-            text: "Big Daddy",
-            correct: true
-        },
-        {
             text: "Giant Haystacks",
             correct: false
+        },
+        {
+            text: "Big Daddy",
+            correct: true
         },
         {
             text: "Kendo Nagasaki",
@@ -100,18 +100,18 @@ const questions = [{
     ]
 },
 {
-    question: `Which Formula One driver was nicknamed "The Professor`,
+    question: `Which Formula One driver was nicknamed "The Professor"?`,
     answers: [{
-            text: "Alain Prost",
-            correct: true
-        },
-        {
             text: "Ayrton Senna",
             correct: false
         },
         {
             text: "Niki Lauda",
             correct: false
+        },
+        {
+            text: "Alain Prost",
+            correct: true
         },
         {
             text: "Emerson Fittipaldi",
