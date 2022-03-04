@@ -12,46 +12,47 @@
 <header id="title">
     <h1>Sports Quiz</h1>
 </header>
+
 <body>
     <div id="open">
         <h3 class="opening-message">Do you think you got what it takes? <i class="fa-solid fa-dumbbell"></i></h3>
     </div>
-<div class="container">
-    <div id="question-container" class="hide">
-        <div id="question">Question</div>
-        <div id="answer-buttons" class="btn-grid">
-            <button class="btn">Answer 1</button>
-            <button class="btn">Answer 2</button>
-            <button class="btn">Answer 3</button>
-            <button class="btn">Answer 4</button>
+    <div class="container">
+        <div id="question-container" class="hide">
+            <div id="question">Question</div>
+            <div id="answer-buttons" class="btn-grid">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="start-btn" class="start-btn btn">Start</button>
+            <button id="next-btn" class="next-btn btn hide">Next</button>
         </div>
     </div>
-    <div class="controls">
-    <button id="start-btn" class="start-btn btn">Start</button>
-    <button id="next-btn" class="next-btn btn hide">Next</button>
-</div>
-</div>
-<div id="hud">
-<div class="hud-item-left">
-    <p class="hud-prefix" id="progress-text">
-    </p>
-    <div id="progressBar">
-        <div id="progressBarFull"></div>
+    <div id="hud">
+        <div class="hud-item-left">
+            <p class="hud-prefix" id="progress-text">
+            </p>
+            <div id="progressBar">
+                <div id="progressBarFull"></div>
+            </div>
+            <div class="hud-item-right">
+                <p class="hud-prefix">
+                    Score
+                </p>
+                <h1 class="hud-main-text" id="score">
+                    0
+                </h1>
+            </div>
+        </div>
     </div>
-    <div class="hud-item-right">
-        <p class="hud-prefix">
-            Score
-        </p>
-        <h1 class="hud-main-text" id="score">
-            0
-        </h1>
-    </div>
-</div>
-</div>
 
 
-<script src="assets/js/questions.js"></script>
-<script src="assets/js/quiz.js"></script>
+    <script src="assets/js/questions.js"></script>
+    <script src="assets/js/quiz.js"></script>
 </body>
 
 </html>
