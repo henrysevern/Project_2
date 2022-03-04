@@ -95,3 +95,20 @@ function incrementScore() {
     score++;
     scoreElement.innerText = score;
 }
+
+// Javascript for end.html 
+
+const username = document.querySelector('#username');
+const saveScore = document.querySelector('#saveScoreButton');
+const finalScore = document.querySelector('#finalScore');
+const mostRecentScore = document.querySelector('#mostRecentScore');
+
+const highScores = JSON.parse(localStorage.getItem('highScores')) || []
+
+const maxHighScores = 10
+
+finalScore.innerText = mostRecentScore
+
+username.addEventListener('keyup', () => {
+    saveScore.disabled = !username.value
+})
