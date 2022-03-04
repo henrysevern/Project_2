@@ -163,3 +163,15 @@ input {
     padding: 10px 20px;
     font-weight: bold;
 }
+
+/* Styles for highscores.html */
+
+#highScoresList {
+    list-style: none;
+    margin-bottom: 4rem;
+}
+
+.high-score {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
