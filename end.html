@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,22 +8,28 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==">
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" type="text/css">
     <title>Document</title>
 </head>
+
 <body>
     <div class="container">
-     <div id="end">
-         <h1 id="finalScore">0</h1>
-         <form class="end-form-container">
-             <h2 id="end-text">Enter your name below to save your score!</h2>
-             <input type="text" name="name" id="username" placeholder="Enter your name">
-             <button class="btn" id="saveScoreButton" type="submit" onclick="saveHighScore(event)" disabled>Save</button>
+        <div id="end">
+            <h1 id="finalScore">0</h1>
+            <form class="end-form-container">
+                <h2 id="end-text">Enter your name below to save your score!</h2>
+                <input type="text" name="name" id="username" placeholder="Enter your name">
+                <button class="btn" id="saveScoreButton" type="submit" onclick="saveHighScore(event)"
+                    disabled>Save</button>
 
-        </form>
-        <a href="index.html" class="btn">Play again</a>
-     </div>
+            </form>
+            <a href="index.html" class="btn">Play again</a>
+            <a href="highscores.html" class="btn">High Scores</a>
+        </div>
     </div>
- 
+
+    <script src="assets/js/end.js"></script>
 </body>
+
 </html>
