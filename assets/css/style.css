@@ -120,6 +120,7 @@ body {
 }
 
 #progressBarFull {
+    transition: all 0.2s ease-in-out;
     height: 100%;
     background: rgb(11, 223, 36);
     width: 0%;
