@@ -125,3 +125,41 @@ body {
     background: rgb(11, 223, 36);
     width: 0%;
 }
+
+/* Styles of end.html */
+
+.end-form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* max-width: 30rem; */
+}
+
+input {
+    margin-bottom: 1rem;
+    width: 20rem;
+    padding: 1rem;
+    font-size: 1.8rem;
+    border: none;
+    box-shadow: 0 0.1rem 1.4rem 0;
+}
+
+#finalScore {
+    text-align: center;
+    font-size: 3rem;
+    margin: 1rem;
+}
+
+#username {
+    margin-bottom: 3rem;
+    width: 50%;
+    outline: none;
+    text-align: center;
+}
+
+#saveScoreButton {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    font-weight: bold;
+}
