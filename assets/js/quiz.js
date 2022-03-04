@@ -5,11 +5,12 @@ const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 const openMessage = document.getElementById('open')
 const progressBarFull = document.getElementById('progressBarFull')
+let scoreElement = document.getElementById('score')
 
 let shuffleQuestions, currentQuestionIndex
 let score = 0
 
-const maxQuestions = 10
+const maxQuestions = 4
 
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
@@ -28,9 +29,12 @@ function startGame() {
 
 function setNextQuestion() {
     resetState()
-    showQuestion(shuffleQuestions[currentQuestionIndex])
-
-    currentQuestionIndex++
+    if((currentQuestionIndex + 1) <= maxQuestions) {
+        showQuestion(shuffleQuestions[currentQuestionIndex])
+    } else {
+        window.location.href = 'end.html'
+    }
+    
     progressBarFull.style.width = `${(currentQuestionIndex/maxQuestions) * 100}%`
 }
 
@@ -58,9 +62,14 @@ function resetState() {
 function selectAnswer(e) {
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
-    setStatusClass(document.body, correct)
+    if(correct) {
+        incrementScore()
+    }
+    // // setStatusClass(document.body, correct)
+    // console.log(correct)o
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
+        // console.log(button.dataset.correct)
     })
     if (shuffleQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide')
@@ -72,23 +81,23 @@ function selectAnswer(e) {
 
 // Function sets classes on correct and incorrect answers and call 'incrementScore' function if answer is correct.
 function setStatusClass(element, correct) {
+    // console.log(correct)
     clearStatusClass(element)
     if (correct) {
         element.classList.add('correct')
-        incrementScore()
     } else
         element.classList.add('incorrect')
 }
 
 // Function removes correct and incorrect classes after answer has been selected for next question.
 function clearStatusClass(element) {
-    element.classList.remove('correct')
-    element.classList.remove('incorrect')
-
+    element.classList.remove('correct', 'incorrect')
 }
 
 // Function to increment score
 function incrementScore() {
-    let oldScore = parseInt(document.getElementById("score").innerText);
-    document.getElementById("score").innerText = ++oldScore;
+    score++
+    // let oldScore = parseInt(scoreElement.innerText);
+    // console.log(oldScore)
+    scoreElement.innerText = score;
 }
