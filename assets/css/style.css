@@ -28,7 +28,7 @@ body {
 
 .opening-message {
     position: fixed;
-    top: 240px;
+    top: 360px;
     color: whitesmoke;
 }
 
@@ -164,6 +164,17 @@ input {
     font-weight: bold;
 }
 
+.play-again-btn {
+    text-decoration: none;
+    color: black;
+}
+
+.highscores-btn {
+    text-decoration: none;
+    background-color: rgb(248, 91, 0);
+    color: black;
+}
+
 /* Styles for highscores.html */
 
 #highScoresList {
@@ -175,3 +186,9 @@ input {
     font-size: 2rem;
     margin-bottom: 0.5rem;
 }
+
+.go-home-btn {
+    text-decoration: none;
+    color: black;
+}
+
