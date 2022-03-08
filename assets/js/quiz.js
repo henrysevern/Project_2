@@ -5,9 +5,10 @@ const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
 const openMessage = document.getElementById('open');
 const highScoresBtn = document.getElementById('high')
+const progressText = document.getElementById('progress-text')
 const progressBarFull = document.getElementById('progressBarFull');
-let scoreElement = document.getElementById('score');
 
+let scoreElement = document.getElementById('score');
 let shuffleQuestions, currentQuestionIndex;
 let score = 0;
 
@@ -32,7 +33,8 @@ function startGame() {
     questionContainerElement.classList.remove('hide');
     setNextQuestion();
 }
-// Function sets up next question, once max questions have been asked and answered the page will be automatically referred to 'end.html'.
+// Function sets up next question, once max questions have been asked and answered, score is saved into local storage and 
+// the page will be automatically referred to 'end.html'.
 function setNextQuestion() {
     resetState();
     if ((currentQuestionIndex + 1) <= maxQuestions) {
@@ -42,11 +44,15 @@ function setNextQuestion() {
         localStorage.setItem('mostRecentScore', score)
         window.location.href = 'end.html'
     };
+    
+    // For progress text increments as questions are showed.
+    progressText.innerText = `Question ${currentQuestionIndex + 1} of ${maxQuestions}`
     // For progress bar increments as questions have been asked.
     progressBarFull.style.width = `${(currentQuestionIndex/maxQuestions) * 100}%`;
+
 }
 
-// 
+// Function
 function showQuestion(question) {
     questionElement.innerText = question.question;
     question.answers.forEach(answer => {
@@ -79,15 +85,16 @@ function selectAnswer(e) {
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct);
     })
+    // Next question button is displayed 
     if (shuffleQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide');
-    } else {
-        startButton.innerText = 'Restart';
-        startButton.classList.remove('hide');
-    }
+    } //else {
+    //     startButton.innerText = 'Restart';
+    //     startButton.classList.remove('hide');
+    // }
 }
 
-// Function sets classes on correct and incorrect answers and call 'incrementScore' function if answer is correct.
+// Function sets classes on correct and incorrect answers.
 function setStatusClass(element, correct) {
     clearStatusClass(element);
     if (correct) {
@@ -95,6 +102,7 @@ function setStatusClass(element, correct) {
     } else
         element.classList.add('incorrect');
 }
+
 
 // Function removes correct and incorrect classes after answer has been selected for next question.
 function clearStatusClass(element) {
