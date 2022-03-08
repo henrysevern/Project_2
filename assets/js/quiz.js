@@ -4,40 +4,49 @@ const questionContainerElement = document.getElementById('question-container');
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
 const openMessage = document.getElementById('open');
+const highScoresBtn = document.getElementById('high')
 const progressBarFull = document.getElementById('progressBarFull');
 let scoreElement = document.getElementById('score');
 
 let shuffleQuestions, currentQuestionIndex;
 let score = 0;
 
-const maxQuestions = 4;
+const maxQuestions = 5;
 
+// Event listeners for start and next buttons. 
+// When start button is clicked, start game function is called.
+// When next button is clicked, question index loop starts and set next question function is called .
 startButton.addEventListener('click', startGame);
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++;
     setNextQuestion();
 });
-
+// Function starts the game, adds the hide class to several elements, shuffle questions is defiend by sorting 
+// questions using Math.random and next question function is called.
 function startGame() {
     startButton.classList.add('hide');
     openMessage.classList.add('hide');
+    highScoresBtn.classList.add('hide');
     shuffleQuestions = questions.sort(() => Math.random() - .5);
     currentQuestionIndex = 0;
     questionContainerElement.classList.remove('hide');
     setNextQuestion();
 }
-
+// Function sets up next question, once max questions have been asked and answered the page will be automatically referred to 'end.html'.
 function setNextQuestion() {
     resetState();
-    if((currentQuestionIndex + 1) <= maxQuestions) {
+    if ((currentQuestionIndex + 1) <= maxQuestions) {
         showQuestion(shuffleQuestions[currentQuestionIndex])
-    } else {
+    } 
+    else {
+        localStorage.setItem('mostRecentScore', score)
         window.location.href = 'end.html'
     };
-    
+    // For progress bar increments as questions have been asked.
     progressBarFull.style.width = `${(currentQuestionIndex/maxQuestions) * 100}%`;
 }
 
+// 
 function showQuestion(question) {
     questionElement.innerText = question.question;
     question.answers.forEach(answer => {
@@ -52,6 +61,7 @@ function showQuestion(question) {
     })
 }
 
+// Function reset removes next button and 
 function resetState() {
     nextButton.classList.add('hide');
     while (answerButtonsElement.firstChild) {
@@ -59,10 +69,11 @@ function resetState() {
     };
 }
 
+// Function calls on score to be incremented if answer is correct,
 function selectAnswer(e) {
     const selectedButton = e.target;
     const correct = selectedButton.dataset.correct;
-    if(correct) {
+    if (correct) {
         incrementScore();
     }
     Array.from(answerButtonsElement.children).forEach(button => {
