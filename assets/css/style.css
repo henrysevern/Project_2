@@ -14,9 +14,10 @@ body {
     padding: 0;
     margin: 0;
     display: flex;
+    flex-direction: column;
     width: 100vw;
     height: 100vh;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     background: url('../images/weightlifting.jpg') no-repeat center center;
     background-size: cover;
@@ -25,14 +26,10 @@ body {
 
 /* Styling for title */
 #title {
-    position: fixed;
-    top: 40px;
     color: whitesmoke;
 }
 /* Styling for opening message */
-.opening-message {
-    position: fixed;
-    top: 360px;
+#open {
     color: whitesmoke;
 }
 /* Main styling for neutral, correct and incorrect buttons */
@@ -88,6 +85,7 @@ body {
 }
 
 .controls {
+    margin: 1em auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -99,9 +97,6 @@ body {
 
 
 #hud {
-    display: inline-block;
-    position: fixed;
-    bottom: 10px;
     color: whitesmoke;
 }
 
@@ -114,9 +109,13 @@ body {
     text-align: center;
 }
 
+/* Styles for progress text */
+
 #progress-text {
     font-size: 1.5rem;
 }
+
+/* Styles for progress bar */
 
 #progressBar {
     width: 20rem;
@@ -141,6 +140,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#end-text {
+    text-align: center;
 }
 
 input {
@@ -201,3 +204,6 @@ input {
     color: black;
 }
 
+@media screen and (max-width: 500px) {
+
+}
