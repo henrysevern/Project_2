@@ -1,3 +1,4 @@
+// Javascript for index.html
 const startButton = document.getElementById('start-btn');
 const nextButton = document.getElementById('next-btn');
 const questionContainerElement = document.getElementById('question-container');
@@ -38,21 +39,20 @@ function startGame() {
 function setNextQuestion() {
     resetState();
     if ((currentQuestionIndex + 1) <= maxQuestions) {
-        showQuestion(shuffleQuestions[currentQuestionIndex])
-    } 
-    else {
-        localStorage.setItem('mostRecentScore', score)
-        window.location.href = 'end.html'
-    };
-    
+        showQuestion(shuffleQuestions[currentQuestionIndex]);
+    } else {
+        localStorage.setItem('mostRecentScore', score);
+        window.location.href = 'end.html';
+    }
+
     // For progress text increments as questions are showed.
-    progressText.innerText = `Question ${currentQuestionIndex + 1} of ${maxQuestions}`
+    progressText.innerText = `Question ${currentQuestionIndex + 1} of ${maxQuestions}`;
     // For progress bar increments as questions have been asked.
     progressBarFull.style.width = `${(currentQuestionIndex/maxQuestions) * 100}%`;
 
 }
 
-// Function
+// Function shows the question and answer options. Creates a button element for each of the answers. 
 function showQuestion(question) {
     questionElement.innerText = question.question;
     question.answers.forEach(answer => {
@@ -60,8 +60,9 @@ function showQuestion(question) {
         button.innerText = answer.text;
         button.classList.add('btn');
         if (answer.correct) {
-            button.dataset.correct = answer.correct
-        };
+            button.dataset.correct = answer.correct;
+        }
+        // Event listener for selected answer by the user.
         button.addEventListener('click', selectAnswer);
         answerButtonsElement.appendChild(button);
     })
@@ -71,11 +72,11 @@ function showQuestion(question) {
 function resetState() {
     nextButton.classList.add('hide');
     while (answerButtonsElement.firstChild) {
-        answerButtonsElement.removeChild(answerButtonsElement.firstChild)
-    };
+        answerButtonsElement.removeChild(answerButtonsElement.firstChild);
+    }
 }
 
-// Function calls on score to be incremented if answer is correct,
+// Function calls on score to be incremented if selected answer is correct.
 function selectAnswer(e) {
     const selectedButton = e.target;
     const correct = selectedButton.dataset.correct;
@@ -85,13 +86,10 @@ function selectAnswer(e) {
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct);
     })
-    // Next question button is displayed 
+    // Next question button is displayed.
     if (shuffleQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide');
-    } //else {
-    //     startButton.innerText = 'Restart';
-    //     startButton.classList.remove('hide');
-    // }
+    }
 }
 
 // Function sets classes on correct and incorrect answers.
@@ -104,7 +102,7 @@ function setStatusClass(element, correct) {
 }
 
 
-// Function removes correct and incorrect classes after answer has been selected for next question.
+// Function removes correct and incorrect classes for next question.
 function clearStatusClass(element) {
     element.classList.remove('correct', 'incorrect');
 }
@@ -114,4 +112,3 @@ function incrementScore() {
     score++;
     scoreElement.innerText = score;
 }
-

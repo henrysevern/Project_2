@@ -1,5 +1,8 @@
+/* CSS for all pages */
+/* Imported google font */
 @import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
 
+/* Universal selector for page styles */
 *,
 *::before,
 *::after {
@@ -20,18 +23,19 @@ body {
 
 }
 
+/* Styling for title */
 #title {
     position: fixed;
     top: 40px;
     color: whitesmoke;
 }
-
+/* Styling for opening message */
 .opening-message {
     position: fixed;
     top: 360px;
     color: whitesmoke;
 }
-
+/* Main styling for neutral, correct and incorrect buttons */
 :root {
     --hue-neutral: 200;
     --hue-correct: 100;
@@ -137,7 +141,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* max-width: 30rem; */
 }
 
 input {
@@ -177,6 +180,7 @@ input {
     text-decoration: none;
     background-color: rgb(248, 91, 0);
     color: black;
+    margin-top: 5rem;
 }
 
 /* Styles for highscores.html */
@@ -184,6 +188,7 @@ input {
 #highScoresList {
     list-style: none;
     margin-bottom: 4rem;
+    text-align: center;
 }
 
 .high-score {

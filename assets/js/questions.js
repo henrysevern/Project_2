@@ -1,3 +1,4 @@
+// Javascript for questions.
 const questions = [{
         question: "At which bridge does the annual Oxford and Cambridge boat race start?",
         answers: [{
