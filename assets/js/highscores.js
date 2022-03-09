@@ -1,3 +1,5 @@
+/* jshint esversion: 8 */
+
 // Javascript for highscores.html
 
 const highScoresList = document.querySelector('#highScoresList');

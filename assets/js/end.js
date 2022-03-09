@@ -1,3 +1,5 @@
+/* jshint esversion: 8 */
+
 // Javascript for end.html.
 const username = document.querySelector('#username');
 const saveScore = document.querySelector('#saveScoreButton');
@@ -31,5 +33,6 @@ saveHighScore = e => {
     highScores.splice(5);
 
     localStorage.setItem('highScores', JSON.stringify(highScores));
-    window.location.assign('/');
+    
+    window.location.replace('highscores.html');
 }

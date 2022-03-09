@@ -1,3 +1,5 @@
+/* jshint esversion: 8 */
+
 // Javascript for questions.
 const questions = [{
         question: "At which bridge does the annual Oxford and Cambridge boat race start?",

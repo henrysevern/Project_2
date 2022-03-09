@@ -1,3 +1,5 @@
+/* jshint esversion: 8 */
+
 // Javascript for index.html
 const startButton = document.getElementById('start-btn');
 const nextButton = document.getElementById('next-btn');
@@ -46,9 +48,12 @@ function setNextQuestion() {
     }
 
     // For progress text increments as questions are showed.
-    progressText.innerText = `Question ${currentQuestionIndex + 1} of ${maxQuestions}`;
-    // For progress bar increments as questions have been asked.
-    progressBarFull.style.width = `${(currentQuestionIndex/maxQuestions) * 100}%`;
+    setTimeout(() => {
+        
+        progressText.innerText = `Question ${currentQuestionIndex + 1} of ${maxQuestions}`;
+        // For progress bar increments as questions have been asked.
+        progressBarFull.style.width = `${(currentQuestionIndex/maxQuestions) * 100}%`;
+    }, 500);
 
 }
 
@@ -97,14 +102,17 @@ function setStatusClass(element, correct) {
     clearStatusClass(element);
     if (correct) {
         element.classList.add('correct');
+        element.disabled = true
     } else
-        element.classList.add('incorrect');
+    element.classList.add('incorrect');
+    element.disabled = true 
 }
 
 
 // Function removes correct and incorrect classes for next question.
 function clearStatusClass(element) {
     element.classList.remove('correct', 'incorrect');
+    element.disabled = false
 }
 
 // Function to increment score
