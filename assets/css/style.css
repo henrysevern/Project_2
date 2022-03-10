@@ -233,6 +233,30 @@ input {
         box-shadow: 0 0.1rem 1.4rem 0;
     }
 
+    .container {
+        width: 800px;
+        max-width: 80%;
+        background-color: white;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 0 0 10px 2px;
+        text-align: center;
+    }
+
+    #saveScoreButton {
+        font-size: 1.5rem;
+        padding: 10px 20px;
+        font-weight: bold;
+        margin: 2rem auto;
+    }
+
+    #username {
+        margin: 1rem;
+        width: 50%;
+        outline: none;
+        text-align: center;
+    }
+
 }
 
 /* Media queries for screen width's of 400px and below */
@@ -247,9 +271,23 @@ input {
         box-shadow: 0 0.1rem 1.4rem 0;
     }
 
+    #username {
+        margin: 1rem;
+        width: 50%;
+        outline: none;
+        text-align: center;
+    }
+
     .high-score {
         font-size: 1.6rem;
         margin-bottom: 0.5rem;
+    }
+
+    #saveScoreButton {
+        font-size: 1.5rem;
+        padding: 10px 20px;
+        font-weight: bold;
+        margin: 2rem auto;
     }
 
     #finalScore {
