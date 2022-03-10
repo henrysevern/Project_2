@@ -9,5 +9,5 @@ const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 
 // Creates a list element for the leaderboard using the score and the saved name.
 highScoresList.innerHTML = highScores.map(score => {
-    return `<li class=high-score>${score.name} - ${score.score}</li>`
+    return `<li class=high-score>${score.name} - ${score.score}</li>`;
 }).join('');

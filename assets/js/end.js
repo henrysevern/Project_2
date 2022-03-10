@@ -12,8 +12,8 @@ finalScore.innerText = mostRecentScore;
 
 // Event listener so something has to be typed in order to save score.
 username.addEventListener('keyup', () => {
-    saveScore.disabled = !username.value
-});
+    saveScore.disabled = !username.value;
+})
 
 // Most recent score is stringified and set to local storage. Once highscore is saved page is refreshed. 
 saveHighScore = e => {
@@ -24,11 +24,11 @@ saveHighScore = e => {
         name: username.value
     };
 
-    highScores.push(endScore)
+    highScores.push(endScore);
 
     highScores.sort((a, b) => {
-        return b.endScore - a.endScore
-    });
+        return b.endScore - a.endScore;
+    })
 
     highScores.splice(5);
 

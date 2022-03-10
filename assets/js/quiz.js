@@ -7,8 +7,8 @@ const questionContainerElement = document.getElementById('question-container');
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
 const openMessage = document.getElementById('open');
-const highScoresBtn = document.getElementById('high')
-const progressText = document.getElementById('progress-text')
+const highScoresBtn = document.getElementById('high');
+const progressText = document.getElementById('progress-text');
 const progressBarFull = document.getElementById('progressBarFull');
 
 let scoreElement = document.getElementById('score');
@@ -69,7 +69,7 @@ function showQuestion(question) {
         // Event listener for selected answer by the user.
         button.addEventListener('click', selectAnswer);
         answerButtonsElement.appendChild(button);
-    })
+    });
 }
 
 // Function reset removes next button
@@ -89,7 +89,7 @@ function selectAnswer(e) {
     }
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct);
-    })
+    });
     // Next question button is displayed.
     if (shuffleQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide');
@@ -101,17 +101,17 @@ function setStatusClass(element, correct) {
     clearStatusClass(element);
     if (correct) {
         element.classList.add('correct');
-        element.disabled = true
+        element.disabled = true;
     } else
         element.classList.add('incorrect');
-    element.disabled = true
+    element.disabled = true;
 }
 
 
 // Function removes correct and incorrect classes for next question.
 function clearStatusClass(element) {
     element.classList.remove('correct', 'incorrect');
-    element.disabled = false
+    element.disabled = false;
 }
 
 // Function to increment score
