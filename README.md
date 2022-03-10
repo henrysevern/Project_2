@@ -1,108 +1,119 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Sports Quiz App
 
-Welcome henrysevern,
+![Mockup](documentation/tests/mockup.png)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Sports Quiz app is a application for a quiz based around various sports questions. The app will be targeted towards people looking to test their knowledge on different sports based questions. The app aims to be easy to use, responsive and also fun to play.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+## Features 
 
-## Gitpod Reminders
+The website features 3 different pages - Home, score page and a highscores page.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### Home page
+The home page features a short message challenging the user to take the quiz, a start button and a highscores link to see the leaderboard. When the start button is pressed the first question will appear along with a progress display. When the answer is selected by the user, and if its correct will display grren and the score will increment. However, if the answer is incorrect it will display red and the score will not increment. The next button will only display once an answer has been selected to move on to the following question. As the questions are asked the progress text and bar will increment. Once all questions have been asked and answered the page will automatically foward to the score page. 
 
-`python3 -m http.server`
+The style of the container aims at being simple and easy to use. The questions are clear to read and the  correct and incorrect answers of the question are displayed after the user has selected.
 
-A blue button should appear to click: _Make Public_,
+### Score page
+The score page features the final score off the quiz and a chance to save your highscore. All that needs to be done is enter your name and click save. This will automatically save your score to the leaderboard and redirect you back to the high scores page.
 
-Another blue button should appear to click: _Open Browser_.
+### Highscores page 
+The Competition page allows the user to enter a competition to win a free meal for two for answering a few questions. This page would be focused on bringing more users to visit the restaurant website and further providing more bookings. The terms and conditions are in a scroll box to allow for a cleaner viewing.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+The high scores page allows the user to view their best scores off the quiz. The page also features a home button to easily move betwwen home and highscores pages. This entices the user to continue playing to try and beat their best score.
 
-A blue button should appear to click: _Make Public_,
+### Existing Features
 
-Another blue button should appear to click: _Open Browser_.
+- __Title and Opening Message__
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- The title is featured across all of the pages
+- The opening message only appears on the home page and is removed when the user clicks start.
+- The meesage is there to entice the user into taking on the quiz challenge
 
-To log into the Heroku toolbelt CLI:
+![Title](documentation/tests/title.png)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- __The Game Area__
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+  - The game area features the questions, answers, start button and the next button.
+  - When the start button is clicked a question is asked with four multiple choice answers.
+  - Once the user has selected an answer the text will be bold and the coloured background will detemine whether the answer is correct or incorrect (green = correct, red = incorrect).
+  - The next button will then display for the next question and set of answers.
+  - this area is simple to use with a simple process.
 
-------
+![Start-Game](documentation/tests/start-game.png)
+![Mid-Game](documentation/tests/mid-game.png)
 
-## Release History
+- __The Progress Area__
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- The progress area features the current question index, a progress bar and the current score of the user.
+- The question index increments as the questions are asked whilst the progress bar increments when the answer has been selected.
+- The score will only increment by one if the user selects the correct answer. 
+- This section is clear for the user to see what how many questions they've answered and how many are remaining. The progress bar slides up slowly and smoothly for visual affect and is bright green so easy to see over any background.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+![Progress](documentation/tests/progress.png)
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+- __Score Page__
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+- The score area displays the score the user has achieved from the quiz
+- They can choose to save their score if they think it's a good one!
+- The input field displays where they need to type their name and the save button will only activate when something has been typed.
+- Once the save button is clicked the user will be redirected to the highscores page where they can view their new score.
+- The score area also features a play again button without saving if the score was a little embarrasing!
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+![Score](documentation/tests/score.png)
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+- __Highscores Page__
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+- The highscores page features a leaderboard displaying the saved scores.
+- It will display the name entered and saved along with the score.
+- The page also feature a go home button to return to the home page.
+- This page is designed to challenge the user to play again and again to reach a better score.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+![Highscores](documentation/tests/leaderboard.png)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Features Left to Implement
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+Some future features to be implemented;
+ - The leaderboard to displayed ordered from highest score at the top.
+ - Possibly have different backgrounds on random so one is picked out of say 10 different sporting images.
+ - More questions.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+## Testing 
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+For all testing documentation, please refer to the [TESTING.md](TESTING.md) file.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+### Unfixed Bugs
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+No visible bugs to be fixed 
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+## Deployment
 
-------
+The site was deployed to GitHub pages. The steps to deploy are as follows: 
+  - In the [GitHub repository](https://github.com/henrysevern/Project-1), navigate to the Settings tab 
+  - From the source section drop-down menu, select the **Main** Branch, then click "Save".
+  - The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
-## FAQ about the uptime script
+The live link can be found [here](https://henrysevern.github.io/Project-1)
 
-**Why have you added this script?**
+### Local Deployment
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+In order to make a local copy of this project, you can clone it. In your IDE Terminal, type the following command to clone my repository:
 
-**How will this affect me?**
+- `git clone https://github.com/henrysevern/Sports_Quiz_App.git`
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/henrysevern/Sports_Quiz_App)
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+## Credits 
 
-**So….?**
+### Content
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+ - The font used in this project was Nova Square imported from Google fonts.
+ - The icons used were imported from Font awsome.
+ - Some content was aided by https://www.w3schools.com and JavaScript30
+ - Also some content from previous units on the course (Love Running and Coders Coffeehouse) has aided this project.
+ - Open Trivia Database (https://opentdb.com/) was used for the sports questions.
+ 
+ ### Media
 
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+- All images were imported from Pexel.
