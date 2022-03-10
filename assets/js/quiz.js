@@ -47,12 +47,11 @@ function setNextQuestion() {
         window.location.href = 'end.html';
     }
 
+    // For progress bar increments as questions have been asked.
+    progressBarFull.style.width = `${(currentQuestionIndex/maxQuestions) * 100}%`;
     // For progress text increments as questions are showed.
     setTimeout(() => {
-        
         progressText.innerText = `Question ${currentQuestionIndex + 1} of ${maxQuestions}`;
-        // For progress bar increments as questions have been asked.
-        progressBarFull.style.width = `${(currentQuestionIndex/maxQuestions) * 100}%`;
     }, 500);
 
 }
@@ -73,7 +72,7 @@ function showQuestion(question) {
     })
 }
 
-// Function reset removes next button and 
+// Function reset removes next button
 function resetState() {
     nextButton.classList.add('hide');
     while (answerButtonsElement.firstChild) {
@@ -104,8 +103,8 @@ function setStatusClass(element, correct) {
         element.classList.add('correct');
         element.disabled = true
     } else
-    element.classList.add('incorrect');
-    element.disabled = true 
+        element.classList.add('incorrect');
+    element.disabled = true
 }
 
 
