@@ -4,24 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Sports quiz">
+    <meta name="keywords" content="sports, quiz, sports quiz, sports game">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS links -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Favicon Icon -->
     <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- Fontawsome link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" type="text/css">
-
+    <!-- Page title -->
     <title>Sports Quiz App</title>
 </head>
-<header id="title">
-    <h1>Sports Quiz</h1>
-</header>
 
 <body>
+    <!-- Header element with title. -->
+    <header id="title">
+        <h1>Sports Quiz</h1>
+    </header>
+    <!-- Opening message. -->
     <div id="open">
         <h3 class="opening-message">Do you think you got what it takes? <i class="fas fa-dumbbell"></i></h3>
     </div>
+    <!-- Div for game area -->
     <div class="container">
+        <!-- Container for questions and answers. -->
         <div id="question-container" class="hide">
             <div id="question">Question</div>
             <div id="answer-buttons" class="btn-grid">
@@ -31,25 +40,31 @@
                 <button class="btn">Answer 4</button>
             </div>
         </div>
+        <!-- Start and Next button controls -->
         <div class="controls">
             <button id="start-btn" class="start-btn btn">Start</button>
             <button id="next-btn" class="next-btn btn hide">Next</button>
         </div>
+        <!-- Highscores button page link -->
         <a href="highscores.html" id="high" class="btn highscores-btn">High Scores <i class="fas fa-crown"></i></a>
     </div>
-
+    <!-- Score and progress area  -->
     <div id="hud">
         <div class="hud-item-left">
+            <!-- Progress text-->
             <p class="hud-prefix" id="progress-text">
                 Question
             </p>
+            <!-- Progress bar -->
             <div id="progressBar">
                 <div id="progressBarFull"></div>
             </div>
+            <!-- Score text -->
             <div class="hud-item-right">
                 <p class="hud-prefix">
                     Score
                 </p>
+                <!-- Score amount -->
                 <h1 class="hud-main-text" id="score">
                     0
                 </h1>
@@ -57,7 +72,7 @@
         </div>
     </div>
 
-
+    <!-- Javascript links -->
     <script src="assets/js/questions.js"></script>
     <script src="assets/js/quiz.js"></script>
 </body>

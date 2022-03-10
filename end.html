@@ -5,33 +5,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS links -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Favicon Icon -->
     <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- Fontawsome link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" type="text/css">
-    <title>Document</title>
+    <!-- Page title -->
+    <title>Your score!</title>
 </head>
 
 <body>
+    <!-- Header element with title. -->
     <header id="title">
         <h1>Sports Quiz</h1>
     </header>
+    <!-- Score information section -->
     <div class="container">
         <div id="end">
+            <!-- Final score -->
             <h1 id="finalScore">0</h1>
             <form class="end-form-container">
+                <!-- Enter name text -->
                 <h2 id="end-text">Enter your name below to save your score!</h2>
+                <!-- Name input -->
                 <input type="text" name="name" id="username" placeholder="Enter your name">
+                <!-- Save button -->
                 <button class="btn" id="saveScoreButton" type="submit" onclick="saveHighScore(event)"
                     disabled>Save</button>
 
             </form>
-            <a href="index.html" class="btn play-again-btn">Play again</a>
+            <!-- Play again and High scores button links -->
+            <a href="index.html" class="btn play-again-btn">Play Again</a>
             <a href="highscores.html" class="btn highscores-btn">High Scores <i class="fas fa-crown"></i></a>
         </div>
     </div>
-
+    <!-- Javascript link -->
     <script src="assets/js/end.js"></script>
 </body>
 
