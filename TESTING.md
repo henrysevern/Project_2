@@ -9,7 +9,7 @@ No errors in index.html were found.
 
 No errors in end.html were found.
 
-![highscores.html](documentation/testing/code-validation/index-highscores.png)
+![highscores.html](documentation/testing/code-validation/highscores-validation.png)
 
 No errors in highscores.html were found.
 
