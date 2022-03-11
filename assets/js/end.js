@@ -30,7 +30,7 @@ saveHighScore = e => {
         return b.endScore - a.endScore;
     })
 
-    highScores.splice(5);
+    highScores.splice(10);
 
     localStorage.setItem('highScores', JSON.stringify(highScores));
     

@@ -1,6 +1,6 @@
 /* jshint esversion: 8 */
 
-// Javascript for questions.
+// Javascript for questions, 30 questions.
 const questions = [{
         // 1
         question: "At which bridge does the annual Oxford and Cambridge boat race start?",

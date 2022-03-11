@@ -15,7 +15,7 @@ let scoreElement = document.getElementById('score');
 let shuffleQuestions, currentQuestionIndex;
 let score = 0;
 
-const maxQuestions = 5;
+const maxQuestions = 10;
 
 // Event listeners for start and next buttons. 
 // When start button is clicked, start game function is called.
